@@ -9,4 +9,6 @@ COPY . .
 
 EXPOSE 8888
 
-CMD ["npm", "run", "build", "&&", "npm", "start"]
+RUN npm run build
+
+CMD ["npm", "start"]
