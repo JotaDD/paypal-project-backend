@@ -6,6 +6,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "tsup src/server.ts",
+		"start": "node dist/server.cjs",
 		"dev": "tsx watch src/server",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
