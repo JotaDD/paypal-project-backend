@@ -5,6 +5,7 @@ const { CLIENT_ID, SECRET_ID, BASE_URL_PAYPAL, NODE_ENV, PORT } = process.env
 
 export const HOST =
   NODE_ENV === 'production' ? process.env.HOST : 'http://localhost:' + PORT
+console.log('HOST', HOST)
 
 export const generateAccessToken = async () => {
   try {
