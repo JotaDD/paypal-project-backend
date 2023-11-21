@@ -1,0 +1,22 @@
+version: '1.0'
+services:
+  paypal-project-backend:
+    container_name: paypal-project-backend
+    image: node:20.9.0
+    restart: always
+    user: node
+    ports:
+      - 8888:8888
+    environment:
+      - CLIENT_ID=AUqjGvP_0hqXOdPYM8CD6KaQ9UlrdJ6ak3Bkf_bhP5dl-JwJTNNleve1HoYOc7O9WmtZlwM0jc8pL5pF
+      - SECRET_ID=ELpPA9GjnsdW0cSjLgNwKbXZueTVmUVbP1XS7JZ61gcUQMh3TOUdeRfKbZ7_A1Coj0lkxoWsDNSUvh5B
+      - BASE_URL_PAYPAL=https://api-m.sandbox.paypal.com
+      - NODE_ENV=developing
+      - PORT=8888
+      - HOST=""
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: bash
+    tty: true
+    stdin_open: true
