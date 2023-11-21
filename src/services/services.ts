@@ -1,7 +1,10 @@
 import { InfoType, ProductType } from './../../../frontend/src/types/types'
 import 'dotenv/config'
 
-const { CLIENT_ID, SECRET_ID, BASE_URL_PAYPAL } = process.env
+const { CLIENT_ID, SECRET_ID, BASE_URL_PAYPAL, NODE_ENV, PORT } = process.env
+
+export const HOST =
+  NODE_ENV === 'production' ? process.env.HOST : 'http://localhost:' + PORT
 
 export const generateAccessToken = async () => {
   try {
@@ -85,8 +88,8 @@ export const createOrder = async ({
       brand_name: 'mycompany.com',
       landing_page: 'NO_PREFERENCE',
       user_action: 'PAY_NOW',
-      return_url: `http://localhost:8888/capture-order`,
-      cancel_url: `http://localhost:8888/cancel-payment`,
+      return_url: `${HOST}/capture-order`,
+      cancel_url: `${HOST}/cancel-payment`,
     },
   }
 
