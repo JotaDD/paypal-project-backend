@@ -19,7 +19,6 @@ app.post(
   validateInfo,
   async (req: Request, res: Response) => {
     const { products, info } = req.body
-    console.log('INFO', info)
     try {
       const create = await createOrder({ products, info })
       return res.status(200).json(create)
