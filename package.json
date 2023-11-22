@@ -4,6 +4,9 @@
 	"description": "",
 	"main": "server.js",
 	"type": "module",
+	"engine": {
+		"node": "20.9.0"
+	},
 	"scripts": {
 		"build": "tsup src/server.ts",
 		"start": "node dist/server.cjs",
